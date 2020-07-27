@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from crawling.crawling_tasks import task_hello # add
-task_hello(schedule=5, repeat=5)
+from crawling.crawling_tasks import task_hello, task_crawl
+task_hello(schedule=60*1, repeat=60*10)
+task_crawl(schedule = 60*1, repeat = 60 *30)
 
 
 urlpatterns = [

@@ -11,7 +11,7 @@ if res.status_code == 200:
     links = soup.find_all('a', class_='link_txt')
     with sqlite3.connect("db.sqlite3") as con:
         cur = con.cursor()
-        title = str(); link = str()
+        title = str(); link = str(); source = str()
         for link in links:
             title = str.strip(link.get_text())
             link = link.get('href')
